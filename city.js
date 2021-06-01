@@ -20,9 +20,15 @@ window.onload = function(){
     loadStatesDropdown()
 
     //onchange event handler for states dropdown
-    //find the id for states <select> option
+    //find the ID for states <select> option
     const statesDropdown = document.getElementById("statesDropdown")
     statesDropdown.onchange = statesDropdownChanged;
+
+    //onchange event handler for cities dropdown
+    //find the ID for cities <select> option
+    const citiesDropdown = document.getElementById("citiesDropdown")
+    citiesDropdown.onchange = appearOnSelection;
+    
 }
 
 //this function is to authomatically load the states from the array
@@ -80,8 +86,9 @@ window.onload = function(){
     let matchingCities = cityStates.find(element => element.stateAbbr == stateAbbreviation)
 
     //loop through the cities in the matching state and create <option> element for each of them
-   // for(i in matchingCities.cities.length){
+   //for(i in matchingCities.cities.length){
     for(let i = 0; i < matchingCities.cities.length; i++){
+        
         //create an option for each city
         let createOption = document.createElement("option")
 
@@ -92,3 +99,34 @@ window.onload = function(){
         citiesDropdown.appendChild(createOption)
     }
  }
+
+// function to make text appear on browser
+function appearOnSelection(){
+
+    //find the ID of states and cities <select> tag
+    const statesDropdown = document.getElementById("statesDropdown")
+    const citiesDropdown = document.getElementById("citiesDropdown")
+
+    //erase previous message selected
+    const messagePara = document.getElementById("messagePara")
+    messagePara.innerHTML = ""
+
+    //grab the state abbreviation of state selected
+    let selectedCity = citiesDropdown.value
+
+    //If "Select One..." is picked there is no value so alert the user
+    if(selectedCity == ""){
+        // alert("Please Choose a City")
+        return;
+    }
+
+    //selectedIndex is a method that will give you back the index of selected value from array
+    let selectedStateIndex = statesDropdown.selectedIndex
+    let selectedState = statesDropdown.options[selectedStateIndex].text
+
+    //connect the message with innerHTML so it appears on browser
+    let message = "City: " + selectedCity + "<br>" + "State: " + selectedState
+    messagePara.innerHTML = message
+}
+
+ 
