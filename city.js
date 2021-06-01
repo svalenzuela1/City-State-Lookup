@@ -19,8 +19,14 @@ window.onload = function(){
     //this adds the states to the first <select> tag in html
     loadStatesDropdown()
 
+    //onchange event handler for states dropdown
+    //find the id for states <select> option
+    const statesDropdown = document.getElementById("statesDropdown")
+    statesDropdown.onchange = statesDropdownChanged;
 }
 
+//this function is to authomatically load the states from the array
+// in first select tag
  function loadStatesDropdown(){
     //grab the HTML element by its ID
      const statesDropdown = document.getElementById('statesDropdown')
@@ -48,4 +54,41 @@ window.onload = function(){
         //append it to the HTML <select> element
         statesDropdown.appendChild(createOption)
      }
+ }
+
+ //this function is responsible for the cities popping up in the second <select> element
+ function statesDropdownChanged(){
+
+    //find the state and city <select> tags
+    const statesDropdown = document.getElementById("statesDropdown");
+    const citiesDropdown = document.getElementById("citiesDropdown");
+
+    //after picking previous state with cities popping up
+    //this will remove those cities after picking another state from first dropdown
+    citiesDropdown.options.length = 0;
+
+    //save the value from state selection(state abbreviation) into variable
+    let stateAbbreviation = statesDropdown.value;
+
+    //if user left first <select> tag blank then create popup notifying them
+    if(stateAbbreviation == ""){
+        alert("Please Choose State")
+        return;
+    }
+
+    //use find method to find the matching cities from the states
+    let matchingCities = cityStates.find(element => element.stateAbbr == stateAbbreviation)
+
+    //loop through the cities in the matching state and create <option> element for each of them
+   // for(i in matchingCities.cities.length){
+    for(let i = 0; i < matchingCities.cities.length; i++){
+        //create an option for each city
+        let createOption = document.createElement("option")
+
+        //add text for each city option
+        createOption.textContent = matchingCities.cities[i]
+
+        //append each option to the second <select> tag
+        citiesDropdown.appendChild(createOption)
+    }
  }
