@@ -36,6 +36,8 @@ window.onload = function(){
  function loadStatesDropdown(){
     //grab the HTML element by its ID
      const statesDropdown = document.getElementById('statesDropdown')
+     const citiesDropdown = document.getElementById("citiesDropdown");
+
 
      //add a "select one" Option to the states Drop down 
      let selectOneOption = document.createElement("option")
@@ -44,6 +46,12 @@ window.onload = function(){
 
      //add the selectOne Option to the states <select> element
      statesDropdown.appendChild(selectOneOption)
+
+    //  //add option select one to City Dropdown
+    // let selectOneOptionToCity = document.createElement("option")
+    // selectOneOptionToCity.textContent = "Select a City"
+    // citiesDropdown.appendChild(selectOneOptionToCity);
+    addSelectOptionToCitiesDropdown()
 
      //loop through the array above and create an <option> for each 
      //one and append it to <select> element for states
@@ -69,9 +77,14 @@ window.onload = function(){
     const statesDropdown = document.getElementById("statesDropdown");
     const citiesDropdown = document.getElementById("citiesDropdown");
 
+    //erase previous message selected
+    const messagePara = document.getElementById("messagePara")
+    messagePara.innerHTML = ""
+        
     //after picking previous state with cities popping up
     //this will remove those cities after picking another state from first dropdown
     citiesDropdown.options.length = 0;
+    addSelectOptionToCitiesDropdown("Select One")
 
     //save the value from state selection(state abbreviation) into variable
     let stateAbbreviation = statesDropdown.value;
@@ -129,4 +142,14 @@ function appearOnSelection(){
     messagePara.innerHTML = message
 }
 
+function addSelectOptionToCitiesDropdown(cityTextOption="Select State First"){
+
+    const citiesDropdown = document.getElementById("citiesDropdown")
+
+    //Add a "Select State First..." <Option>
+    let selectOneOption = document.createElement("option")
+    selectOneOption.textContent = cityTextOption
+    selectOneOption.value = ""
+    citiesDropdown.appendChild(selectOneOption);
+}
  
