@@ -7,22 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City State Lookup</title>
 
+
+  <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+  integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+
+  <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
     <script src="city.js" defer></script>
+
 </head>
 
 <body>
-    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="p-5">
 <form>
-    <label for="statesDropdown">State:</label>
-    <select id="statesDropdown"></select>
+    <label for="statesDropdown" class="h3">State:</label><br>
+    <select id="statesDropdown" class="input"></select>
     <br><br>
 
-    <label for="citiesDropdown">Cities:</label>
-    <select id="citiesDropdown"></select>
+    <label for="citiesDropdown" class="h3">Cities:</label><br>
+    <select id="citiesDropdown" class="input"></select>
 </form>
 
-<p id="messagePara"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <p id="messagePara" class="raleway p-5"></p>
+    </div>
+
+<!-- Bootstrap script files go to the bottom of the body -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+crossorigin="anonymous"></script>
 
 </body>
 
