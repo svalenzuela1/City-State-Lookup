@@ -9,9 +9,49 @@ let cityStates = [{
     cities: ["Aspen", "Boulder", "Denver", "Pagosa Springs"]
  },
  {
+    state: "Florida",
+    stateAbbr: "FL",
+    cities: ["Jacksonville", "Miami", "Orlando", "Tampa"]
+ },
+ {
+    state: "Hawaii",
+    stateAbbr: "HI",
+    cities: ["Honolulu", "Kahului", "Kailua-Kona", "Pearl City"]
+ },
+ {
+    state: "Massachusetts",
+    stateAbbr: "MA",
+    cities: ["Boston", "Cambridge", "Salem", "Worcester"]
+ },
+ {
+    state: "New York",
+    stateAbbr: "NY",
+    cities: ["Brooklyn","Bronx", "Queens", "Manhattan", "Staten Island"]
+ },
+ {
+    state: "North Carolina",
+    stateAbbr: "NC",
+    cities: ["Charlotte", "Raleigh", "Greensboro", "Durham"]  
+ },
+ {
+    state: "Pennsylvania",
+    stateAbbr: "PA",
+    cities: ["Erie", "Harrisburg", "Philadelphia", "Pittsburgh"]
+ },
+ {
+    state: "South Carolina",
+    stateAbbr: "SC",
+    cities: ["Columbia", "Greenville", "North Charleston", "Summerville" ]
+ },
+ {
     state: "Texas",
     stateAbbr: "TX",
     cities: ["Austin", "Dallas", "Houston", "San Antonio"]
+ },
+ {
+    state: "Washington",
+    stateAbbr: "WA",
+    cities: ["Bellevue", "Forks", "Seattle", "Vancouver"]
  }
 ];
 
